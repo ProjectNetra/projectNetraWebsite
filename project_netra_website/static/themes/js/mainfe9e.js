@@ -527,29 +527,29 @@
   function initCustom () {
     // Your custom code here.
   }
-  //func comets start
+  //func netra start
   function slidercp(){
     var elements = new Array();
     //alert(elements.length);
     var i = 0;
-    $('.wp-images-comets-hidden > li.src-images-comets-hidden').each(function() {
+    $('.wp-images-netra-hidden > li.src-images-netra-hidden').each(function() {
       elements[i] = $(this).html();
       i++;
     });
-    $('.wp-images-comets-hidden').remove();
+    $('.wp-images-netra-hidden').remove();
     var j = 0;
-    $('#home-slider ul.slides > li > .field_image_comets-js').each(function() {
+    $('#home-slider ul.slides > li > .field_image_netra-js').each(function() {
       $(this).replaceWith(elements[j]);
       j++;
       //alert(elements[j]);
     });
   }
-  //func comets end
+  //func netra end
   function init () {
     initNavbar();
-    //func comets start
+    //func netra start
     slidercp();
-    //func comets end
+    //func netra end
     initHomeSlider();
     initCarousels();
     initSliders();
