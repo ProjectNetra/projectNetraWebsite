@@ -1,0 +1,245 @@
+{% load static wagtailuserbar %}
+{% load wagtailcore_tags wagtailimages_tags %}
+<!DOCTYPE html>
+<head>
+   <title>Netra - {{page.title}}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+   <meta charset="utf-8" />
+   <meta name="MobileOptimized" content="width" />
+   <meta name="HandheldFriendly" content="true" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   {% block head-scripts %}
+   {% endblock head-scripts %}
+
+   {% block head-styles %}
+   {% endblock head-styles %}
+
+   <script src="https://kit.fontawesome.com/895abefc57.js" crossorigin="anonymous"></script>
+   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   <link rel="shortcut icon" href="{% static 'images/fav/android-chrome-192x192_1.png' %}" type="image/vnd.microsoft.icon" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/ajax-progress.module87a5.css?qdmdd7' %}" media="all" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/autocomplete-loading.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/fieldgroup.module87a5.css?qdmdd7' %}" media="all" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/container-inline.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/clearfix.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/details.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/hidden.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/item-list.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/js.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/nowrap.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/position-container.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/progress.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/reset-appearance.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/resize.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/sticky-header.module87a5.css?qdmdd7' %}" media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/tabledrag.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet" href="{% static 'core/themes/stable/css/system/components/tablesort.module87a5.css?qdmdd7' %}"
+      media="all" />
+   <link rel="stylesheet"
+      href="{% static 'core/themes/stable/css/system/components/tree-child.module87a5.css?qdmdd7' %}" media="all" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" media="all" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" media="all" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Halant:300,400" media="all" />
+   <link rel="stylesheet" href="{% static 'themes/css/bundle87a5.css?qdmdd7' %}" media="all" />
+   <link rel="stylesheet" href="{% static 'themes/css/style87a5.css?qdmdd7' %}" media="all" />
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;600;900&family=Source+Serif+Pro&display=swap"
+      rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   {% wagtailuserbar %}
+   <div id="loader">
+      <div class="centrize">
+         <div class="v-center">
+            <div id="mask">
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <header id="topnav">
+      <div class="logo">
+         <a href="/">
+            <img src="{% static 'images/LOGOW.png' %}" class="img-back" />
+            <img src="{% static 'images/LOGOB.png' %}" class="img-top"/>
+         </a>
+         </div>
+      <div class="container">
+         <div class="menu-extras">
+            <div class="menu-item">
+               <div class="search">
+                  <a href="{% url 'search' %}" onclick="goToSearch()">
+                     <i class="fas fa-search"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="menu-item">
+               <a class="navbar-toggle">
+                  <div class="lines">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                  </div>
+               </a>
+            </div>
+         </div>
+         <div id="navigation" style="background-color: b71c1c;">
+            <h2 class="visually-hidden">Main navigation</h2>
+            <ul class="navigation-menu">
+               <li class="netra-megamenu">
+                  <a></a>
+               </li>
+               {% for menuitem in menuitems %}
+               <li class="netra-megamenu">
+                  <a href="{% pageurl menuitem %}" style="font-weight: 800;">{{ menuitem.title }}</a>
+               </li>
+               {% endfor %}
+               
+               {% if user.is_authenticated %}
+                  {% include 'components/authentication/logout.html' %}
+               {% else %}
+                  <li class="netra-megamenu">
+                     <a href="#" data-toggle="modal" title="Login" data-target="#loginModal" style="font-weight: 800;"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                  </li>
+               {% endif %}
+
+               <li class="netra-megamenu">
+                  <a class="icon-hover"  href="https://discord.com/widget?id=815798019315466282&theme=dark"
+                     style="font-weight: 800;"><i class="fab fa-discord fa-2x"></i></a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </header>
+
+   {% include 'components/subscribe_modal.html' %}
+   {% include 'components/authentication/login.html' %}
+
+   {% block content %}
+   {% endblock content %}
+   <script src="{% static 'core/assets/vendor/domready/ready.min7016.js?v=1.0.8' %}"></script>
+   <script src="{% static 'core/assets/vendor/jquery/jquery.min63b9.js?v=2.1.4' %}"></script>
+   <script src="{% static 'themes/js/custom-netrafe9e.js?v=8.1.0' %}"></script>
+   <script src="{% static 'themes/js/bundlefe9e.js?v=8.1.0' %}"></script>
+   <script src="{% static 'themes/js/mainfe9e.js?v=8.1.0' %}"></script>
+   <script src="{% static 'themes/js/updatefe9e.js?v=8.1.0' %}"></script>
+   <script src="{% static 'core/assets/vendor/jquery/jquery3.6.0.js' %}"></script>
+   <script
+      type="text/javascript">(function () { window['__CF$cv$params'] = { r: '63f252b0a90f069e', m: '5e6f06999e1978deaae419f61ce1b86043821ae9-1618292044-1800-ATlDH/LXBkV4etrn+aXe//K3RzSR4iRJuJGG0oZxStyQTh0/ukMnXNv+vbWVFQj/4bz34fpibkvTRH69QjGaUYb63icazjxHAqH1PBC1kd7BbjaoBnAyWD2boXw5y4hT9Q==', s: [0x3f48b7633b, 0xb77587025c], } })();</script>
+   <script src="{% static 'extras/js/velocity.min.js' %}"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <!-- Subscribe Modal Script -->
+   <script>
+      $("#MyLink").click(function () {
+         mixpanel.track("Clicked Link");
+      })
+   </script>
+   <script>
+      function goToSearch() {
+         location = "{% url 'search' %}";
+      }
+   </script>
+   <script type="text/javascript">
+      function selectAllCategoriesInModal() {
+         const ele = document.querySelectorAll('label.btn>input');
+         ele.forEach((value) => {
+            $(value).prop('checked', true)
+            $(value.parentElement).addClass('active')
+         })
+      }
+      function unSelectAllCategoriesInModal() {
+         const ele = document.querySelectorAll('label.btn>input');
+         ele.forEach((value) => {
+            $(value).prop('checked', false);
+            $(value.parentElement).removeClass('active')
+         })
+      }
+   </script>
+   <script>
+      $('#submitSubscribeModal').click(
+         function () {
+            $('#subscribe-form').submit();
+         }
+      );
+      $('#subscribe-form').on('submit',
+         function (e) {
+            e.preventDefault();
+            const submit_button = $('#submitSubscribeModal');
+            submit_button.prop('disabled', true);
+            const revertSubmit = () => {
+               submit_button.removeClass('btn-primary');
+               submit_button.addClass('btn-color-out');
+               submit_button.attr('value', 'Save your Subscriptions');
+               submit_button.prop('disabled', false);
+            };
+            submit_button.addClass('btn-primary');
+            submit_button.removeClass('btn-color-out')
+            submit_button.attr('value', 'Save Changes');
+            $.ajax({
+               type: 'POST',
+               url: "{% url 'blog_extension:toggle_subscription' %}",
+               data: $(this).serialize(),
+               success: function (response) {
+                  revertSubmit();
+                  let currentSubs = response.current_subscriptions;
+                  console.log(currentSubs)
+                  currentSubs = currentSubs != '' ? currentSubs : 'None'
+                  swal('Your Changes have been saved',
+                     `Current Subscription: ${currentSubs}`,
+                     'success')
+                     .then(() => {
+                        $('#closeSubscribeModal').click();
+                     });
+               },
+               error: function (response) {
+                  revertSubmit();
+                  swal('Your Changes could not be saved.', 'Please Reload the Page.', 'error')
+                     .then(() => {
+                        $('#closeSubscribeModal').click();
+                     });
+               }
+            })
+         }
+      );
+      $(document).ready(function () {
+         document.querySelectorAll('.navigation-menu >li').forEach((value) => value.classList.remove('active'));
+      })
+   </script>
+   <!-- Subscribe Modal Script -->
+   {% block scripts %}
+   {% endblock scripts %}
+</body>
+
+</html>

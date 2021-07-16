@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}template-blogpage{% endblock %}
+{% block content %}
+<div class="wrapper">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="title txt-sm-center txt-xs-center mt-0">
+        <h4 id="about-title">{{ page.title }}<span class="red-dot"></span></h4>
+        <div id="about_section">
+          <p id="about-description" class="text-justify">
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English.
+          </p>
+          <br>
+          <br>
+        </div>
+        <div>
+          <div id="content-hideable">
+            <div class="views-element-container widget">
+              <button class="btn btn-color-out " data-toggle="modal" data-target="#subscribeModal">
+                Manage Subscriptions
+              </button>
+            </div>
+            {% include 'components/support.html' %}
+          </div>
+          {% include 'components/follow_me.html' %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <ul role="tablist" class="nav nav-tabs outline">
+        {% for tab in page.tabs %}
+        <li role="presentation">
+          <a href="#{{ tab.value.name|slugify }}" role="tab" data-toggle="tab">
+            {{ tab.value.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="tab-content">
+        {% for tab in page.tabs %}
+        <div id="{{ tab.value.name|slugify }}" role="tabpanel" class="tab-pane fade in text-justify">
+
+          {% if tab.block_type == 'appointment' %}
+          {% include_block tab with form=contact_form %}
+          {% else %}
+          {% include_block tab %}
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const contactUrl = "{% url 'blog_extension:submit_contact_form' %}";
+</script>
+<script src="{% static 'netraJS/aboutPageJs.js' %}"></script>
+{% endblock scripts %}

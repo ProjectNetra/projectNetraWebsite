@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}template-blogpage{% endblock %}
+{% block content %}
+<style>
+.container{
+    height:670px;
+    background-color:green;
+    box-sizing:border-box;
+
+}
+    #navigation ul li
+    {
+        list-style:none;
+        display:block;
+        float:left;
+        margin:5px;
+        margin-right: 32px;
+    /* border: 1px solid black; */
+    height: 28px;
+    width: 50px;
+    }
+    #navigation
+    {
+        position:relative;
+        left:0;
+        right:0;
+        top:0px;
+        margin:0px;
+        height:40px;
+        background-color:white;
+        margin: 7px;
+    }
+    #navigation ul li a
+    {
+        text-decoration:none;
+    }
+    #navigation .navitem
+    {
+        float:left;
+    }
+    .row{
+        height:500px;
+        display:grid;
+        grid-template-columns:1fr 3fr;
+    }
+    .col-md-4{
+        display:inline-block;
+        height:100%;
+        margin: 7px;
+    }
+    .col-md-8
+    {
+        display:inline-block;
+        height:100%;
+        margin: 7px;
+    }
+    #project{
+        height:50%;
+        border:2px solid black;
+        box-sizing:border-box;
+        margin: 7px;
+        background-color:white;
+    }
+    #description{
+        height:50%;
+        border:2px solid black;
+        box-sizing:border-box;
+        margin: 7px;
+        background-color:white;
+    }
+    .content
+    {
+        display:flex;
+        flex-direction:column;
+        margin-top:0px;
+        height:100%;
+        width:100%;
+        margin: 7px;
+    }
+    .box1
+    {
+        height:135px;
+        border:1px solid black;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        box-sizing:border-box;
+        margin: 7px;
+        background-color:white;
+    }
+    .box2{
+        height:270px;
+        border:1px solid black;
+        margin: 7px;
+        background-color:white;
+    }
+    .box3{
+        height:135px;
+        border:1px solid black;
+        margin: 7px;
+        background-color:white;
+    }
+    .box-2{
+        border:2px solid black;
+    }
+    .active
+    {
+        display:none;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="" id="project">
+
+            </div>
+            <div id="description">
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div id="navigation">
+            <ul role="tablist" class="nav nav-tabs outline">
+                <li role="presentation" class="navitem"><a href="#Website" role="tab" data-toggle="tab" onclick="website()">Website</a>
+                </li>
+                <li role="presentation" class="navitem"><a href="#app" role="tab" data-toggle="tab" onclick="app()">App</a>
+                </li>
+            </ul>
+            </div>
+            <div class="content" id="website" >
+                <div class="box1">
+                    <div class="box-2">
+                        website
+                    </div>
+                    <div class="box-2">
+
+                    </div>
+                </div>
+                <div class="box2">
+
+                </div>
+                <div class="box3">
+                </div>
+            </div>
+            <div id="app" class="content active">
+                <div class="box1">
+                    <div class="box-2">
+                        app
+                    </div>
+                    <div class="box-2">
+
+                    </div>
+                </div>
+                <div class="box2">
+
+                </div>
+                <div class="box3">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+    <script>
+        function website()
+  {
+    document.getElementById('website').classList.remove('active');
+    document.getElementById('app').classList.add('active');
+
+  }
+  function app()
+  {
+    document.getElementById('app').classList.remove('active');
+    document.getElementById('website').classList.add('active');1
+  }
+    </script>
+{% endblock %}
